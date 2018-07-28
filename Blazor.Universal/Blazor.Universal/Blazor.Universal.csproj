@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>7.3</LangVersion>
+
+    <!-- The linker is not beneficial for server-side execution. Re-enable this if you switch to WebAssembly execution. -->
+    <BlazorLinkOnBuild>false</BlazorLinkOnBuild>
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
+    <ApplicationIcon />
+    <OutputType>Exe</OutputType>
+    <StartupObject />
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Blazor.Browser" Version="0.5.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Blazor.Build" Version="0.5.1" />
+    <PackageReference Include="Xamarin.Forms" Version="3.1.0.637273" />
+  </ItemGroup>
+
+  <!-- Note this post build event which executes the Deploy powershell script that copies the Blazor application into AppX folder of the Universal app (because UWP has very restricted file system access).
+       Also note that Blazor.Universal\Blazor.Universal.UWP\bin\$(Platform)\Debug\AppX\Blazor.Universal is hardcoded below.
+  -->
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="powershell.exe -ExecutionPolicy Bypass -NoProfile -NonInteractive -File &quot;$(SolutionDir)Deploy.ps1&quot; &quot;$(ProjectDir)*&quot; &quot;$(SolutionDir)Blazor.Universal\Blazor.Universal.UWP\bin\x86\Debug\AppX\Blazor.Universal&quot;" />
+  </Target>
+</Project>
