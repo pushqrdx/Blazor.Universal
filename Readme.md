@@ -2,7 +2,7 @@
 
 1. Want to develop your application using HTML/CSS/C# ?
 2. Want to develop your application using HTML/CSS/C# but still want to have access to Native APIs ?
-3. Want to develop your application using HTML/CSS/C# but still want to have access to Native APIs and you also want to run you're app cross platform ?!!
+3. Want to develop your application using HTML/CSS/C# but still want to have access to Native APIs ? and you also want to run your app cross platform ?!!
 
 ### DREAM NO MORE!
 
