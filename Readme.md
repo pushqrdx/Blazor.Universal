@@ -6,7 +6,7 @@
 
 ### DREAM NO MORE!
 
-In this example project you can see `Blazor` bootstrapped inside a `Xamarin.UWP` project and being accessed through a `WebView` so that no web assembly is used, no sandbox, access to whatever `Xamarin` API you want, Even use `Xamarin.Forms` `MessagingCenter` to invoke platform specific APIs whenever needed.
+In this example project you can see `Blazor` bootstrapped inside a `Xamarin.UWP` project and being accessed through a `WebView` so that no web assembly is used, no sandbox, access to whatever `Xamarin` API you want, Even use `Xamarin.Forms` `MessagingCenter` to invoke platform specific APIs whenever needed, and full debugging capability.
 
 > CHEERS MAN THIS IS AWESOME, FINALLY I CAN BUILD ONCE AND DEPLOY EVERYWHERE! HELL YEAH.
 
